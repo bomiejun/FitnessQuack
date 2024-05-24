@@ -13,6 +13,16 @@
         <body>
             <h1>FITNESS QUACK: Better Health, with a Friend!</h1>
             <a href="CalorieChecker.html"><button class="calorie">CALORIE CHECKER</button></a>
+            <div id="homeSidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" class="navButton">Nutrition</a>
+                <a href="#">Sleep</a>
+                <a href="#">Exercise</a>
+                <a href="#">Statistics</a>
+            </div>
+            <a onclick="openNav()"><button>Navigation</button></a>
+            <!-- stylize nav button -->
+            <script src="script/HomeScript.js"></script>
         </body>
 
     <style>
@@ -51,12 +61,64 @@
             border: 6px solid #ffc07c;
 
              }
+        .navButton {
+        background-color: rgb(250, 215, 171);
+        font-family: "Chakra Petch";
+        text-shadow: #ffc07c;
+        font-style: normal;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 35px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        border: 6px solid #ffc07c;
 
+            }
+
+             .sidenav {
+        height: 100%; /* 100% Full-height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #fff2d2; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+        color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        }
         
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+        }
 
-       
-
-        
 
         body {
             background-image: url(https://i.pinimg.com/originals/72/aa/6e/72aa6ead478c0959269b773fca9095ef.png);
