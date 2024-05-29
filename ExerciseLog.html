@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise Log</title>
-    <style>
+    <body>
 
+    <h1>Exercise Log</h1>
+    <div id="exSidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="mainpage.html" class="navButton">Home</a>
+        <a href="#" class="navButton">Nutrition</a>
+        <a href="#" class="navButton">Sleep</a>
+        <a href="ExerciseLog.html" id="active" class="navButton">Exercise</a>
+        <a href="#" class="navButton">Statistics</a>
+    </div>
+    <a onclick="openNav()"><button>Navigation</button></a>
+    <script src="script/ExerciseLog.js"></script>
+    </body>
+    
+    <style>
+    
+        #active{ /* TEMPORARY (feel free to change) */
+            background-color: rgb(255, 240, 163);
+            font-family: "Chakra Petch";
+            color:#ceb749;
+            text-shadow: #ffe77c;
+            border: 6px solid #ffe77c;
+        }
         
         h1 {
             color:rgb(245, 237, 220);
@@ -22,7 +44,83 @@
             -webkit-text-stroke-color: rgb(123, 123, 123);
             
         }
-       
+
+        
+
+        .calorie {
+            background-color: rgb(250, 215, 171);
+            font-family: "Chakra Petch";
+            text-shadow: #ffc07c;
+            font-style: normal;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 35px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            border: 6px solid #ffc07c;
+
+             }
+        .navButton {
+        background-color: rgb(250, 215, 171);
+        font-family: "Chakra Petch";
+        text-shadow: #ffc07c;
+        font-style: normal;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 35px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        border: 6px solid #ffc07c;
+        margin-top: 5px;
+
+            }
+
+             .sidenav {
+        height: 100%; /* 100% Full-height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #fff2d2; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+        padding: 8px 8px 8px 8px;
+        text-decoration: none;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        display: block;
+        transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+        color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+        }
+
 
         body {
             background-image: url(https://i.pinimg.com/originals/72/aa/6e/72aa6ead478c0959269b773fca9095ef.png);
@@ -34,30 +132,5 @@
 </head>
 <body>
     <h1>Exercise Log</h1>
-    <form action="/">
-        <label for="hours">How many hours did you exercise?</label> <br>
-        <input type="number" name="hours" id="hours"> <br>
-        <label for="exercise">What type of exercise did you do?</label> <br>
-        <input type="checkbox" name="basketball" id="basketball">
-        <label for="basketball">Basketball</label> <br>
-        <input type="checkbox" name="soccer" id="soccer">
-        <label for="soccer">Soccer</label> <br>
-        <input type="checkbox" name="tennis" id="tennis">
-        <label for="tennis">Tennis</label> <br>
-        <input type="checkbox" name="swimming" id="swimming">
-        <label for="swimming">Swimming</label> <br>
-        <input type="checkbox" name="running" id="running">
-        <label for="running">Running</label> <br>
-        <input type="checkbox" name="threadmill" id="threadmill">
-        <label for="threadmill">Threadmill</label> <br>
-        <input type="checkbox" name="hiking" id="hiking">
-        <label for="hiking">Hiking</label> <br>
-        <input type="checkbox" name="weightlifting" id="weightlifting">
-        <label for="weightlifting">weightlifting</label> <br>
-        <input type="checkbox" name="other" id="other">
-        <label for="other">Other</label> <br>
-        <input type="submit" value="Submit">
-        
-    </form>
 </body>
 </html>
