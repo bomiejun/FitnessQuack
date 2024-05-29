@@ -7,7 +7,8 @@
     <body>
 
     <h1>Exercise Log</h1>
-    <div id="exSidenav" class="sidenav">
+    <script src="script/ExerciseLog.js"></script>
+    <div id="exSidenav" class="sidenav"> 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="mainpage.html" class="navButton">Home</a>
         <a href="#" class="navButton">Nutrition</a>
@@ -15,8 +16,12 @@
         <a href="ExerciseLog.html" id="active" class="navButton">Exercise</a>
         <a href="#" class="navButton">Statistics</a>
     </div>
-    <a onclick="openNav()"><button>Navigation</button></a>
-    <script src="script/ExerciseLog.js"></script>
+    
+    
+
+    <div class="wrapper">
+        <a onclick="openNav()"><button class ="calorie">Navigation</button></a>
+    </div>
     </body>
     
     <style>
@@ -28,6 +33,17 @@
             text-shadow: #ffe77c;
             border: 6px solid #ffe77c;
         }
+
+        .wrapper {
+    text-align:left;
+        }
+
+        .button {
+            position: absolute;
+            top: 40%;
+        }
+    
+        
         
         h1 {
             color:rgb(245, 237, 220);
@@ -131,6 +147,6 @@
     </style>
 </head>
 <body>
-    <h1>Exercise Log</h1>
+   
 </body>
 </html>
