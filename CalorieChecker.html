@@ -8,27 +8,23 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     </head>
-    
-
-        <body>
-            <h1>FITNESS QUACK: Better Health, with a Friend!</h1>
-            <a href="CalorieChecker.html"><button class="calorie">CALORIE CHECKER</button></a>
-            <div id="homeSidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="mainpage.html" id="active" class="navButton">Home</a>
-                <a href="CalorieChecker.html" class="navButton">Nutrition</a>
-                <a href="sleepcounter.html" class="navButton">Sleep</a>
-                <a href="ExerciseLog.html" class="navButton">Exercise</a>
-                <a href="#" class="navButton">Statistics</a>
-            </div>
-            <a onclick="openNav()"><button>Navigation</button></a>
-            <!-- stylize nav button -->
-            <script src="script/HomeScript.js"></script>
-        </body>
-
+    <body>
+        <h1>Nutrition</h1>
+        <div id="calSidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="mainpage.html" class="navButton">Home</a>
+            <a href="#" id="active" class="navButton">Nutrition</a>
+            <a href="sleepcounter.js" class="navButton">Sleep</a>
+            <a href="ExerciseLog.html" class="navButton">Exercise</a>
+            <a href="#" class="navButton">Statistics</a>
+        </div>
+        <a onclick="openNav()"><button>Navigation</button></a>
+        <!-- stylize nav button -->
+        <script src="script/CalorieCheckerScript.js"></script>
+    </body>
     <style>
 
-        
+
         #active{ /* TEMPORARY (feel free to change) */
             background-color: rgb(255, 240, 163);
             font-family: "Chakra Petch";
@@ -52,6 +48,8 @@
             -webkit-text-stroke-color: rgb(123, 123, 123);
             
         }
+
+        
 
         .calorie {
             background-color: rgb(250, 215, 171);
@@ -134,5 +132,6 @@
             background-attachment: fixed;
             background-size: 100% 100%;
         }
+
     </style>
 </html>
