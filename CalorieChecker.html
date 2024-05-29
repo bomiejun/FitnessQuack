@@ -18,10 +18,28 @@
             <a href="ExerciseLog.html" class="navButton">Exercise</a>
             <a href="#" class="navButton">Statistics</a>
         </div>
-        <a onclick="openNav()"><button class = "calorie">Navigation</button></a>
+        <div class="wrapper">
+            <a onclick="openNav()"><button class ="calorie">Navigation</button></a>
+        </div>
         <!-- stylize nav button -->
 
+        <!-- Form for Calorie Checker -->
+        <h4 class = "formintro"> Please enter in how many calories you've eaten today.</h4>
+
+        <form action = #>
+            <div  style ="text-align:center;">
+                <label >Calories:</label>
+                <input type="calorieinput" id="calorieinput" name="caloriescheck" required>
+                </div>
+
+            <!-- for next time: implement submit button that stores these calories into a variable -->
+          
+
         
+           
+    
+            
+
         <script src="script/CalorieCheckerScript.js"></script>
     </body>
     <style>
@@ -34,6 +52,21 @@
             text-shadow: #ffe77c;
             border: 6px solid #ffe77c;
         }
+
+     
+
+
+        .wrapper {
+    text-align:center;
+        }
+
+        
+
+        .button {
+            position: absolute;
+            top: 40%;
+        }
+    
         
         h1 {
             color:rgb(245, 237, 220);
@@ -49,6 +82,17 @@
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: rgb(123, 123, 123);
             
+        }
+
+        /* Text for Nutrition Page */
+        h4 {
+            text-align: center;
+            font-family: "Chakra Petch";
+            text-shadow: #ffe77c;
+            color: rgb(243, 173, 132);
+           
+            border: 6px solid #f9cd7c;
+
         }
 
         
