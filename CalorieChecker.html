@@ -29,8 +29,36 @@
         <form action = #>
             <div  style ="text-align:center;">
                 <label >Calories:</label>
-                <input type="calorieinput" id="calorieinput" name="caloriescheck" required>
+                <input id="Calories" type = "text" required>
+                <button onclick ="store()" class = "smallbutton" id="submit">submit!</button>
                 </div>
+
+                
+                
+                
+
+                
+                <script>
+                    store = function() {
+                        var cals = document.getElementById("Calories").value;
+                        cals = parseInt(cals);
+                        
+                        if (cals > 2000) {
+                            
+                        }
+                        
+                    }
+                </script>
+             
+    
+
+            <!-- <script> function store() {
+                var inputcals = document.getElementById("caloriescheck");
+                // inputcals holds the value of the submitted calories by the user
+                console.log(inputcals)
+            } // store function
+            </script> -->
+
 
             <!-- for next time: implement submit button that stores these calories into a variable -->
           
@@ -110,6 +138,22 @@
             font-weight: bold;
             color: rgb(255, 255, 255);
             border: 6px solid #ffc07c;
+
+             }
+
+             .smallbutton {
+            background-color: rgb(240, 179, 118);
+            font-family: "Chakra Petch";
+            text-shadow: #ffc07c;
+            font-style: normal;
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            border: 6px solid #fac56f;
 
              }
         .navButton {

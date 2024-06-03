@@ -18,6 +18,8 @@ function openNav() {
     document.getElementById("main").style.marginLeft = "0";
   }
 
+ 
+
   function openNav() {
     document.getElementById("calSidenav").style.width = "100px";
     document.getElementById("main").style.marginLeft = "100px";
