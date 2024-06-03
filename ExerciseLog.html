@@ -4,26 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise Log</title>
-    <body>
-
-    <h1>Exercise Log</h1>
-    <script src="script/ExerciseLog.js"></script>
-    <div id="exSidenav" class="sidenav"> 
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="mainpage.html" class="navButton">Home</a>
-        <a href="#" class="navButton">Nutrition</a>
-        <a href="sleepcounter.js" class="navButton">Sleep</a>
-        <a href="ExerciseLog.html" id="active" class="navButton">Exercise</a>
-        <a href="#" class="navButton">Statistics</a>
-    </div>
-    
-    
-
-    <div class="wrapper">
-        <a onclick="openNav()"><button class ="calorie">Navigation</button></a>
-    </div>
-    </body>
-    
     <style>
     
         #active{ /* TEMPORARY (feel free to change) */
@@ -147,6 +127,51 @@
     </style>
 </head>
 <body>
+
+    <h1>Exercise Log</h1>
+    <script src="script/ExerciseLog.js"></script>
+    <div id="exSidenav" class="sidenav"> 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="mainpage.html" class="navButton">Home</a>
+        <a href="#" class="navButton">Nutrition</a>
+        <a href="sleepcounter.js" class="navButton">Sleep</a>
+        <a href="ExerciseLog.html" id="active" class="navButton">Exercise</a>
+        <a href="#" class="navButton">Statistics</a>
+    </div>
+    
+    
+
+    <div class="wrapper">
+        <a onclick="openNav()"><button class ="calorie">Navigation</button></a>
+    </div>
    
+    <!-- will put this part of a button later -->
+    <form action="/">
+        <h1>New Exercise Log!</h1>
+        <label for="hours">How much hours did you exercise</label>
+        <input type="number" name="hours" id="hours"> <br>
+        <label for="type">What type of exercise did you do</label> <br>
+        <input type="checkbox" name="soccer" id="soccer">
+        <label for="soccer">soccer</label> <br>
+        <input type="checkbox" name="basketball" id="basketball">
+        <label for="basketball">basketball</label> <br>
+        <input type="checkbox" name="tennis" id="tennis">
+        <label for="tennis">tennis</label> <br>
+        <input type="checkbox" name="weight-lifting" id="weight-lifting">
+        <label for="weight-lifting">weight-lifting</label> <br>
+        <input type="checkbox" name="treadmill" id="treadmill">
+        <label for="treadmill">treadmill</label> <br>
+        <input type="checkbox" name="other" id="other">
+        <label for="other">other</label> 
+        <label for="other-calorie">How much calories does that exercise burn per hour?</label>
+        <input type="number" name="other-calorie" id="other-calorie"> <br>
+        <input type="submit" value="Add Log!">
+        </form>
+
+    
+
+
+
 </body>
+
 </html>
