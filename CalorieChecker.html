@@ -14,7 +14,7 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="mainpage.html" class="navButton">Home</a>
             <a href="#" id="active" class="navButton">Nutrition</a>
-            <a href="sleepcounter.js" class="navButton">Sleep</a>
+            <a href="sleepcounter.html" class="navButton">Sleep</a>
             <a href="ExerciseLog.html" class="navButton">Exercise</a>
             <a href="#" class="navButton">Statistics</a>
         </div>
@@ -30,37 +30,97 @@
             <div  style ="text-align:center;">
                 <label >Calories:</label>
                 <input id="Calories" type = "text" required>
-                <button onclick ="store()" class = "smallbutton" id="submit">submit!</button>
+                <button type = 'button' onclick ="store()" class = "smallbutton" id="submit">submit!</button>
+                <h5  id = "output" style = 'display: none'  >
+                     Your calorie count is under the 1600 daily calorie minimum limit recommended by the US 2020-2025 Dietary Guidelines!
+                     I highly encourage you to have a bit more food before you end the day, as calories contribute directly to your body's energy reserves! While it's important to keep your body at a balanced and healthy weight, it's just as important to keep yourself fed and watered, and to not skip meals.
+                     Skipping meals could have long-term effects on your body's metabolism, and can lead to lowered blood sugar, which creates health problems down the line.
+                     If you're on a diet or are purposely cutting your calories down, and are unsure how to meet the recommended calorie minimum, try eating some high-protein foods! Foods such as chicken breast, boiled eggs, or greek yogurt typically have less calories, but lots of lean protein and other nutrients, helping you to build muscle and keep yourself at a healthy weight!
+                    <br> <br> Additionally, keep in mind that for those who are biologically male, a 2,400 calorie minimum is recommended instead due to differences in size, body structure and muscle distribution! <br> Stay healthy! <br> [Sincerely, the FitnessQuack Duck!] </h5>
                 </div>
 
-                
-                
-                
+                <h5 id = "calshealthy" style = 'display: none' >
+                    Your calorie count for today is within range of the healthy daily calorie limit (1600-2400 for females, 2000-3000 for males!) Congratulations! Ensuring that you eat within the range of the recommended limits of calories per day means you're making sure your body is getting the nutrients it needs without over-eating or under-eating! Keep in mind, however, that not all calories are the same! 2,000 calories of hamburgers and 2,000 calories of chicken breast may look similar on paper, but the amount of nutrients found in the latter far surpasses those in hamburgers. Make sure your diet remains varied and that you're eating lots of organic protein, fruit, vegetables, grains, and other healthy foods! <br> Stay healthy! <br> [Sincerely, the FitnessQuack Duck!] </h5>
+
+                <img src= "https://i.pinimg.com/564x/af/66/f6/af66f6f05298dacf38f7badfc176080b.jpg" id = "duck" style="display: none" class = "center">
 
                 
-                <script>
+                <!-- script for running the html pages of nutrition that pop up once calories are inputted -->
+                
+
+ <script>
+    // example script of how to enable and disable html blocks depending on the value of the calories!
+
+//                 var showHide = document.getElementById("showHide");
+//                 var demo = document.getElementById("demo");
+//                 showHide.onclick = function() {
+//                 if (demo.style.display == "block") {
+//                         demo.style.display = "none";
+//                     } else {
+//                         demo.style.display = "block";
+//                         }
+//                         }
+//             <p id='demo' style='display: none'>Hello Javascript</p>
+//             <button id="showHide">Click Me</button>
+//             
+
                     store = function() {
                         var cals = document.getElementById("Calories").value;
                         cals = parseInt(cals);
-                        
-                        if (cals > 2000) {
-                            
+                        var button = document.querySelector("button")
+
+                        var submit = document.getElementById("submit");
+
+                        // <!-- calories are too low html page -->
+                        if (cals < 1600) {
+                            var output = document.getElementById("output");
+                            var duck = document.getElementById("duck");
+
+                        if (output.style.display == "block") {
+                            output.style.display = "none";
                         }
+                        else {
+                            output.style.display = "block";
+                        }
+
+                        if (duck.style.display == "block") {
+                            duck.style.display = "none";
+                        }
+                        else {
+                            duck.style.display = "block";
+                        }
+                        }
+
+                        // else if (1600 <= cals < 3000){
+                        //     var calshealthy = document.getElementByid("calshealthy");
+                        //     var duck = document.getElementById("duck");
+
+                        //     if (calshealthy.style.display == "block") {
+                        //     calshealthy.style.display = "none";
+                        // }
+                        // else {
+                        //     calshealthy.style.display = "block";
+                        // }
+
+                        // if (duck.style.display == "block") {
+                        //     duck.style.display = "none";
+                        // }
+                        // else {
+                        //     duck.style.display = "block";
+                        // }
+                        // }
                         
-                    }
+                        }
+
+                        
+                       
                 </script>
-             
-    
-
-            <!-- <script> function store() {
-                var inputcals = document.getElementById("caloriescheck");
-                // inputcals holds the value of the submitted calories by the user
-                console.log(inputcals)
-            } // store function
-            </script> -->
-
-
-            <!-- for next time: implement submit button that stores these calories into a variable -->
+            
+     
+                
+            
+            
+           
           
 
         
@@ -81,11 +141,38 @@
             border: 6px solid #ffe77c;
         }
 
+        .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 350px;
+}
+
+
+    
      
 
 
         .wrapper {
     text-align:center;
+        }
+
+        h5 {
+            color:rgb(255, 255, 255);
+            font-size: x-large;
+            font-family: "Chakra Petch";
+            text-shadow: #ffe77c;
+            color: rgb(243, 173, 132);
+            border: 6px solid #f9cd7c;
+            text-align:center;
+            background-color: rgb(221, 158, 112);
+            border-style:groove;
+            border-radius: 10px;
+            border-color: rgb(255, 255, 255);
+            -webkit-text-fill-color: rgba(255, 248, 243, 0.901); 
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgb(132, 132, 132);
         }
 
         
