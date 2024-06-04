@@ -7,16 +7,27 @@
     <script src="https://kit.fontawesome.com/ab993de334.js" crossorigin="anonymous"></script>
     <style>
         
-
-        .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-        }
         #navButton{
             font-size:20px;
+        }
+
+        .navigation {
+            border-radius:8px;
+            margin-top:4px;
+            margin-left:5px;
+            background-color: #fff6d2;
+            font-family: "Chakra Petch";
+            text-shadow: #ffde7c;
+            font-style: normal;
+            padding: 3px 6px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffe586;
+            border: 2px solid #ffe596;
+            float: left;
+
         }
 
         #active{ /* TEMPORARY (feel free to change) */
@@ -57,25 +68,6 @@
         }
 
         
-
-        .navigation {
-            border-radius:8px;
-            margin-top:3px;
-            margin-left:5px;
-            background-color: rgb(223, 223, 223);
-            font-family: "Chakra Petch";
-            text-shadow: #ffc07c;
-            font-style: normal;
-            padding: 4px 7px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: bold;
-            color: rgb(158, 158, 158);
-            border: 2px solid #cfcfcf;
-            float: left;
-
-             }
         .navButton {
         background-color: rgb(250, 215, 171);
         font-family: "Chakra Petch";
@@ -146,7 +138,7 @@
 </head>
 <body>
     <div>
-        <h1>Exercise Log</h1> <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a>
+        <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a> <h1>Exercise Log</h1>
     </div>
     <script src="script/ExerciseLog.js"></script>
     <div id="exSidenav" class="sidenav"> 
@@ -163,7 +155,6 @@
 
     <!-- will put this part of a button later -->
     <form action="/">
-        <h1>New Exercise Log!</h1>
         <label for="hours">How much hours did you exercise</label>
         <input type="number" name="hours" id="hours"> <br>
         <label for="type">What type of exercise did you do</label> <br>
