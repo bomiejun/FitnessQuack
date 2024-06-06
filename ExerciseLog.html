@@ -21,7 +21,7 @@
             text-shadow: #ffde7c;
             font-style: normal;
             padding: 3px 6px;
-            text-align: center;
+            text-align: left;
             text-decoration: none;
             font-size: 12px;
             font-weight: bold;
@@ -154,11 +154,11 @@
     <script src="script/ExerciseLog.js"></script>
     <div id="exSidenav" class="sidenav"> 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="mainpage.html" class="navButton">Home</a>
-        <a href="CalorieChecker.html" class="navButton">Nutrition</a>
-        <a href="sleepcounter.html" class="navButton">Sleep</a>
-        <a href="ExerciseLog.html" id="active" class="navButton">Exercise</a>
-        <a href="#" class="navButton">Statistics</a>
+        <a href="mainpage.html" id="active" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+        <a href="CalorieChecker.html" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
+        <a href="sleepcounter.html" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
+        <a href="ExerciseLog.html" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
+        <a href="#" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
     </div>
     
     <button href = "#form">Add Exercise Log!</button>
