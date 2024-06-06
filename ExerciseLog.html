@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise Log</title>
     <script src="https://kit.fontawesome.com/ab993de334.js" crossorigin="anonymous"></script>
+    
     <style>
         
         #navButton{
@@ -134,6 +135,8 @@
             background-attachment: fixed;
             background-size: 100% 100%;
         }
+
+        
     </style>
 </head>
 <body>
@@ -150,30 +153,57 @@
         <a href="#" class="navButton">Statistics</a>
     </div>
     
-    
-    
+    <button href = "#form">Add Exercise Log!</button>
 
-    <!-- will put this part of a button later -->
-    <form action="/">
-        <label for="hours">How much hours did you exercise</label>
-        <input type="number" name="hours" id="hours"> <br>
-        <label for="type">What type of exercise did you do</label> <br>
-        <input type="checkbox" name="soccer" id="soccer">
-        <label for="soccer">soccer</label> <br>
-        <input type="checkbox" name="basketball" id="basketball">
-        <label for="basketball">basketball</label> <br>
-        <input type="checkbox" name="tennis" id="tennis">
-        <label for="tennis">tennis</label> <br>
-        <input type="checkbox" name="weight-lifting" id="weight-lifting">
-        <label for="weight-lifting">weight-lifting</label> <br>
-        <input type="checkbox" name="treadmill" id="treadmill">
-        <label for="treadmill">treadmill</label> <br>
-        <input type="checkbox" name="other" id="other">
-        <label for="other">other</label> 
-        <label for="other-calorie">How much calories does that exercise burn per hour?</label>
-        <input type="number" name="other-calorie" id="other-calorie"> <br>
-        <input type="submit" value="Add Log!">
-        </form>
+    <div>
+        <div class="modal-content">
+            <!-- will put this part of a button later -->
+            <span id="close">&times;</span>
+            <form id = "form" action="/">
+                <label for="hours">How much hours did you exercise</label>
+                <input type="number" name="hours" id="hours"> <br>
+                <label for="type">What type of exercise did you do</label> <br>
+                <input type="radio" name="exercise-type" id="soccer">
+                <label for="soccer">soccer</label> <br>
+                <input type="radio" name="exercise-type" id="basketball">
+                <label for="basketball">basketball</label> <br>
+                <input type="radio" name="exercise-type" id="tennis">
+                <label for="tennis">tennis</label> <br>
+                <input type="radio" name="exercise-type" id="weight-lifting">
+                <label for="weight-lifting">weight-lifting</label> <br>
+                <input type="radio" name="exercise-type" id="treadmill">
+                <label for="treadmill">treadmill</label> <br>
+                <input type="radio" name="exercise-type" id="other">
+                <label for="other">other</label> 
+                <label for="other-calorie">How much calories does that exercise burn per hour?</label>
+                <input type="number" name="other-calorie" id="other-calorie"> <br>
+                <input type="submit" value="Add Log!">
+                </form>
+            </div>
+    </div>
+
+    <table>
+        <th>Day</th>
+        <th>Hours</th>
+        <th>Exercise</th>
+        <!-- sample values for now -->
+        <tr>
+            <td>6/6/2024</td>
+            <td>2</td>
+            <td>Soccer</td>
+        </tr>
+        <tr>
+            <td>6/5/2024</td>
+            <td>1</td>
+            <td>Hockey</td>
+        </tr>
+        <tr>
+            <td>6/2/2024</td>
+            <td>0.5</td>
+            <td>Treadmill</td>
+        </tr>
+    </table>
+    
 
     
 
