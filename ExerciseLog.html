@@ -220,10 +220,13 @@
             border:none;
             font-size:20px;
         }
-        select{
+        select, input{
             border-radius:15px;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size:14px;
+        }
+        form input{
+            width:50px;
         }
         .delete-btn{
             -webkit-text-fill-color: rgb(248, 227, 178); 
@@ -254,9 +257,9 @@
         <div class="modal-content">
             <h1 id = "form-title">Add Exercise Log</h1>
             <form>
-                <label for="hours">How much hours did you exercise(Partial Hours Allowed!)</label>
+                <label for="hours">How much hours did you exercise? (Partial Hours Allowed!!)</label>
                 <input type="number" name="hours" id="hours"> <br>
-                <label for="exercise">What type of exercise did you do</label>
+                <label for="exercise">What type of exercise did you do?</label>
                 <select id="exercise" name="exercise">
                     <option value="1">Soccer</option>
                     <option value="2">Basketball</option>
