@@ -44,13 +44,4 @@ function openNav() {
     document.getElementById("exSidenav").style.width = "0";
   }
 
-  var form = document.getElementById("form");
-  var btn = document.getElementById("openForm");
-  var close = document.getElementById("close");
-
-  btn.onclick = function(){
-    form.style.display = "block";
-  }
-  close.onclick = function(){
-    form.style.display = "none";
-  }
+  
