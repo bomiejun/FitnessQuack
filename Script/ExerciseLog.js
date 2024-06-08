@@ -48,3 +48,7 @@ function openNav() {
     var form = document.getElementById('form');
     form.style.display = 'block';
   }
+  function closeForm(){
+    var form = document.getElementById('form');
+    form.style.display = 'none';
+  }
