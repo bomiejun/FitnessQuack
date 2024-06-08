@@ -15,12 +15,20 @@
             font-size:20px;
         }
 
+        #active{ /* TEMPORARY (feel free to change) */
+            background-color: rgb(255, 240, 163);
+            font-family: "Chakra Petch";
+            color:#ceb749;
+            text-shadow: #ffe77c;
+            border: 6px solid #ffe77c;
+        }
+
         .navButton {
         background-color: rgb(250, 215, 171);
         font-family: "Chakra Petch";
         text-shadow: #ffc07c;
         font-style: normal;
-        text-align: center;
+        text-align: left;
         text-decoration: none;
         display: inline-block;
         font-size: 35px;
@@ -122,11 +130,11 @@
         <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a><h1>Check your sleep stats!</h1>
         <div id="homeSidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="mainpage.html" id="active" class="navButton">Home</a>
-          <a href="CalorieChecker.html" class="navButton">Nutrition</a>
-          <a href="sleepcounter.html" class="navButton">Sleep</a>
-          <a href="ExerciseLog.html" class="navButton">Exercise</a>
-          <a href="#" class="navButton">Statistics</a>
+          <a href="mainpage.html" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+          <a href="CalorieChecker.html" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
+          <a href="sleepcounter.html" id="active" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
+          <a href="ExerciseLog.html" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
+          <a href="#" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
       </div>
         <button class = "modal-trigger" href = "#openform">new sleep log</button>
         
