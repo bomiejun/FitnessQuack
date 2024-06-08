@@ -225,7 +225,11 @@
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size:14px;
         }
-        
+        .delete-btn{
+            -webkit-text-fill-color: rgb(248, 227, 178); 
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: rgb(123, 123, 123);
+        }
        
         
     </style>
@@ -280,21 +284,25 @@
         <th>Day</th>
         <th>Hours</th>
         <th>Exercise</th>
+        <th>Delete</th>
         <!-- sample values for now -->
         <tr>
             <td>6/6/2024</td>
             <td>2</td>
             <td>Soccer</td>
+            <td><a class="delete-btn" href = "#"><i class="material-symbols-outlined ">delete</i></a></td>
         </tr>
         <tr>
             <td>6/5/2024</td>
             <td>1</td>
             <td>Hockey</td>
+            <td><a class="delete-btn" href = "#"><i class="material-symbols-outlined ">delete</i></a></td>
         </tr>
         <tr>
             <td>6/2/2024</td>
             <td>0.5</td>
             <td>Treadmill</td>
+            <td><a class="delete-btn" href = "#"><i class="material-symbols-outlined ">delete</i></a></td>
         </tr>
     </table>
     
