@@ -27,7 +27,23 @@ app.get("/", (req, res) => {
             res.status(500).send(error); // Internal Server Error
         } else {
             // res.send(results);
-            res.render("mainpage", { name: "Steffia", exerciselist: results });
+            res.render("mainpage", { exerciselist: results});
+        }
+    });
+});
+
+
+const get_hours_sum = `
+    select sum(hours) from exercise_log;
+`;
+
+app.get("/", (req, res) => {
+    db.execute(get_hours_sum, (error, results) => {
+        if (error) {
+            res.status(500).send(error); // Internal Server Error
+        } else {
+            // res.send(results);
+            res.render("exercise", { name: "Steffia"});
         }
     });
 });
