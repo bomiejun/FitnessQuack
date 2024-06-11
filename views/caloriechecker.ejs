@@ -13,11 +13,11 @@
         <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a> <h1>Nutrition</h1>
         <div id="calSidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="mainpage.html" class="navButton">Home</a>
-            <a href="#" id="active" class="navButton">Nutrition</a>
-            <a href="sleepcounter.html" class="navButton">Sleep</a>
-            <a href="ExerciseLog.html" class="navButton">Exercise</a>
-            <a href="#" class="navButton">Statistics</a>
+            <a href="/mainpage" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+            <a href="/caloriechecker" id="active" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
+            <a href="/sleepcounter" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
+            <a href="/exercise" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
+            <a href="#" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
         </div>
         <!-- stylize nav button -->
 
@@ -252,7 +252,7 @@
         font-family: "Chakra Petch";
         text-shadow: #ffc07c;
         font-style: normal;
-        text-align: center;
+        text-align: left;
         text-decoration: none;
         display: inline-block;
         font-size: 35px;
@@ -315,4 +315,50 @@
         }
 
     </style>
+    <script>
+        function openNav() {
+            document.getElementById("calSidenav").style.width = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 */
+          function closeNav() {
+            document.getElementById("calSidenav").style.width = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("calSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+          function closeNav() {
+            document.getElementById("calSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+          }
+        
+         
+        
+          function openNav() {
+            document.getElementById("calSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+          function closeNav() {
+            document.getElementById("calSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+          }
+        
+          /* Open the sidenav */
+        function openNav() {
+            document.getElementById("calSidenav").style.width = "20%";
+          }
+          
+          /* Close/hide the sidenav */
+          function closeNav() {
+            document.getElementById("calSidenav").style.width = "0";
+          }
+    </script>
 </html>

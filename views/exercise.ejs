@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Log</title>
+    <script src="https://kit.fontawesome.com/ab993de334.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        
+        #navButton{
+            font-size:20px;
+        }
+
+        .navigation {
+            border-radius:8px;
+            margin-top:4px;
+            margin-left:5px;
+            background-color: #fff6d2;
+            font-family: "Chakra Petch";
+            text-shadow: #ffde7c;
+            font-style: normal;
+            padding: 3px 6px;
+            text-align: left;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffe586;
+            border: 2px solid #ffe596;
+            float: left;
+
+        }
+
+        #active{ /* TEMPORARY (feel free to change) */
+            background-color: rgb(255, 240, 163);
+            font-family: "Chakra Petch";
+            color:#ceb749;
+            text-shadow: #ffe77c;
+            border: 6px solid #ffe77c;
+        }
+
+        .wrapper {
+            text-align:center;
+            position:absolute;
+            bottom:10px;
+        }
+
+        .button {
+            position: absolute;
+            top: 50%;
+        }
+    
+        
+        
+        h1 {
+            color:rgb(245, 237, 220);
+            font-size: 400;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:xx-large;
+            text-align:center;
+            background-color: rgb(254, 248, 235);
+            border-style:groove;
+            border-radius: 10px;
+            border-color: rgb(255, 255, 255);
+            -webkit-text-fill-color: rgb(248, 227, 178); 
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgb(123, 123, 123);
+            
+        }
+
+        
+        .navButton {
+        background-color: rgb(250, 215, 171);
+        font-family: "Chakra Petch";
+        text-shadow: #ffc07c;
+        font-style: normal;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 35px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        border: 6px solid #ffc07c;
+        margin-top: 5px;
+
+            }
+
+             .sidenav {
+        height: 100%; /* 100% Full-height */
+        width: 0; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #fff2d2; /* Black*/
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+        padding: 8px 8px 8px 8px;
+        text-decoration: none;
+        font-size: 25px;
+        color: rgb(255, 255, 255);
+        display: block;
+        transition: 0.3s;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+        color: #f1f1f1;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        }
+        
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+        }
+
+
+        body {
+            background-image: url(https://i.pinimg.com/originals/72/aa/6e/72aa6ead478c0959269b773fca9095ef.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        table{
+            width:100%;
+            background-color: rgb(254, 248, 235);
+            font-family: "Chakra Petch";
+            border-radius: 25px;
+            border:1px solid gray;
+        }
+
+        th{
+            
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:20px;
+            text-align:center;
+            color: rgb(248,227,178);
+            -webkit-text-fill-color: rgb(248, 227, 178); 
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: rgb(123, 123, 123);
+        }
+
+        td{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align:center;
+            padding:5px;
+        }
+        
+        #exercise-btn{
+            width:175px;
+            text-align: center;
+            border-radius:25px;
+            height:40px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:17px;
+            display:flex;
+            align-items: center;
+            background-color: rgb(254, 248, 235);
+            -webkit-text-fill-color: rgb(248, 227, 178); 
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: rgb(123, 123, 123);
+            border: 0.5px solid gray;
+            margin-bottom: 25px;
+        }
+
+        #form{
+            display:none;
+            background-color:white;
+            border:2px solid black;
+            border-radius:25px;
+            width:37%;
+            margin-left: 30%;
+            padding:10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .modal{
+            display:none;
+            position:fixed;
+            z-index:1;
+        }
+
+        .options button, .options input{
+            background-color: rgb(254, 248, 235);
+            border: 1px solid gray;
+            border-radius:25px;
+            margin:5px;
+            -webkit-text-fill-color: rgb(248, 227, 178); 
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: rgb(123, 123, 123);
+            width:75px;
+            height:30px;
+        }
+        .options{
+            display:flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+        }
+        #form-title{
+            -webkit-text-fill-color: rgb(248, 227, 178); 
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: rgb(123, 123, 123);
+            background-color: white;
+            border:none;
+            font-size:20px;
+        }
+        select, input{
+            border-radius:15px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:14px;
+        }
+        form input{
+            width:50px;
+        }
+        .delete-btn{
+            -webkit-text-fill-color: rgb(248, 227, 178); 
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: rgb(123, 123, 123);
+        }
+       
+        
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("exSidenav").style.width = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("exSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("exSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+          }
+        
+          /* Open the sidenav */
+        function openNav() {
+            document.getElementById("exSidenav").style.width = "20%";
+          }
+          
+          /* Close/hide the sidenav */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+          }
+        
+          function openForm(){
+            var form = document.getElementById('form');
+            form.style.display = 'block';
+          }
+          function closeForm(){
+            var form = document.getElementById('form');
+            form.style.display = 'none';
+          }
+    </script>
+</head>
+<body>
+    <div>
+        <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a> <h1>Exercise Log</h1>
+    </div>
+    
+    <div id="exSidenav" class="sidenav"> 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/mainpage" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+        <a href="/caloriechecker" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
+        <a href="/sleepcounter" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
+        <a href="/exercise" id="active" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
+        <a href="#" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
+    </div>
+    
+    <button id = "exercise-btn" onclick="openForm()">Add Exercise Log!<span class="material-symbols-outlined">add_box</span></button>
+    
+    <div id = "form" class = "modal">
+        <div class="modal-content">
+            <h1 id = "form-title">Add Exercise Log</h1>
+            <form action="/exercise" method="post">
+                <label for="hours">How much hours did you exercise? (Partial Hours Allowed!!)</label>
+                <input type="number" name="hours" id="hours"> <br>
+                <label for="exercise">What type of exercise did you do?</label>
+                <select id="exercise" name="exercise">
+                    <option value="1">Soccer</option>
+                    <option value="2">Basketball</option>
+                    <option value="3">Tennis</option>
+                    <option value="4">Volleyball</option>
+                    <option value="5">Badminton</option>
+                    <option value="6">Weightlifting</option>
+                    <option value="7">Treadmill</option>
+                    <option value="8">Biking</option>
+                    <option value="9">Hiking</option>
+                    <option value="10">Other</option>
+                </select>        
+                <div class="options">
+                    <input id = "submit" type="submit" value="Add Log!">
+                    <button id = "close-btn" onclick="closeForm()">Close!</button>
+                </div>
+                </form>
+            </div>
+    </div>
+
+    
+    <table>
+        <th>Day</th>
+        <th>Hours</th>
+        <th>Exercise</th>
+        <th>Delete</th>
+        <% for(let i=0; i < exerciselist.length; i++) { %>
+            <tr>
+                <td>
+                    <%= exerciselist[i].day %>
+                </td>
+                <td>
+                    <%= exerciselist[i].hours %>
+                </td>
+                <td>
+                    <%= exerciselist[i].exercise %>
+                </td>
+                <td>
+                    <a class="delete-btn" href="/exercise/<%= exerciselist[i].log_id%>/delete">
+                        <i class="material-symbols-outlined ">delete</i>
+                    </a>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+    <%= name %>
+</body>
+
+</html>
