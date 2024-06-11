@@ -236,18 +236,71 @@
        
         
     </style>
+    <script>
+        function openNav() {
+            document.getElementById("exSidenav").style.width = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("exSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("exSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+          }
+        
+          /* Open the sidenav */
+        function openNav() {
+            document.getElementById("exSidenav").style.width = "20%";
+          }
+          
+          /* Close/hide the sidenav */
+          function closeNav() {
+            document.getElementById("exSidenav").style.width = "0";
+          }
+        
+          function openForm(){
+            var form = document.getElementById('form');
+            form.style.display = 'block';
+          }
+          function closeForm(){
+            var form = document.getElementById('form');
+            form.style.display = 'none';
+          }
+    </script>
 </head>
 <body>
     <div>
         <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a> <h1>Exercise Log</h1>
     </div>
-    <script src="script/ExerciseLog.js"></script>
+    
     <div id="exSidenav" class="sidenav"> 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="mainpage.html" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
-        <a href="CalorieChecker.html" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
-        <a href="sleepcounter.html" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
-        <a href="ExerciseLog.html" id="active" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
+        <a href="/mainpage" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+        <a href="/caloriechecker" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
+        <a href="/sleepcounter" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
+        <a href="/exercise" id="active" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
         <a href="#" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
     </div>
     
@@ -256,7 +309,7 @@
     <div id = "form" class = "modal">
         <div class="modal-content">
             <h1 id = "form-title">Add Exercise Log</h1>
-            <form>
+            <form action="/exercise" method="post">
                 <label for="hours">How much hours did you exercise? (Partial Hours Allowed!!)</label>
                 <input type="number" name="hours" id="hours"> <br>
                 <label for="exercise">What type of exercise did you do?</label>
@@ -286,25 +339,24 @@
         <th>Hours</th>
         <th>Exercise</th>
         <th>Delete</th>
-        <!-- sample values for now -->
-        <tr>
-            <td>6/6/2024</td>
-            <td>2</td>
-            <td>Soccer</td>
-            <td><a class="delete-btn" href = "#"><i class="material-symbols-outlined ">delete</i></a></td>
-        </tr>
-        <tr>
-            <td>6/5/2024</td>
-            <td>1</td>
-            <td>Tennis</td>
-            <td><a class="delete-btn" href = "#"><i class="material-symbols-outlined ">delete</i></a></td>
-        </tr>
-        <tr>
-            <td>6/2/2024</td>
-            <td>0.5</td>
-            <td>Treadmill</td>
-            <td><a class="delete-btn" href = "#"><i class="material-symbols-outlined ">delete</i></a></td>
-        </tr>
+        <% for(let i=0; i < exerciselist.length; i++) { %>
+            <tr>
+                <td>
+                    <%= exerciselist[i].day %>
+                </td>
+                <td>
+                    <%= exerciselist[i].hours %>
+                </td>
+                <td>
+                    <%= exerciselist[i].exercise %>
+                </td>
+                <td>
+                    <a class="delete-btn" href="/exercise/<%= exerciselist[i].log_id%>/delete">
+                        <i class="material-symbols-outlined ">delete</i>
+                    </a>
+                </td>
+            </tr>
+            <% } %>
     </table>
     
 

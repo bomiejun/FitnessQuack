@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <script src="https://kit.fontawesome.com/ab993de334.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
     </head>
     
 
@@ -16,10 +17,10 @@
             <!-- <a href="CalorieChecker.html"><button class="calorie">CALORIE CHECKER</button></a> calorie checker button (temporarily disabled) -->
             <div id="homeSidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="mainpage.html" id="active" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
-                <a href="CalorieChecker.html" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
-                <a href="sleepcounter.html" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
-                <a href="ExerciseLog.html" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
+                <a href="/mainpage" id="active" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+                <a href="/caloriechecker" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
+                <a href="/sleepcounter" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
+                <a href="/exercise" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
                 <a href="#" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
             </div>
 
@@ -186,4 +187,48 @@
             background-size: 100% 100%;
         }
     </style>
+    <script>
+        function openNav() {
+            document.getElementById("homeSidenav").style.width = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("homeSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("homeSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+          }
+        
+          /* Open the sidenav */
+        function openNav() {
+            document.getElementById("homeSidenav").style.width = "20%";
+          }
+          
+          /* Close/hide the sidenav */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+          }
+    </script>
 </html>

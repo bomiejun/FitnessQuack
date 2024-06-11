@@ -124,16 +124,60 @@
                 background-size: 100% 100%;
             }
         </style>
+        <script>
+          function openNav() {
+            document.getElementById("homeSidenav").style.width = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("homeSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+          }
+        
+          function openNav() {
+            document.getElementById("homeSidenav").style.width = "100px";
+            document.getElementById("main").style.marginLeft = "100px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+          }
+          
+          /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+          }
+        
+          /* Open the sidenav */
+        function openNav() {
+            document.getElementById("homeSidenav").style.width = "20%";
+          }
+          
+          /* Close/hide the sidenav */
+          function closeNav() {
+            document.getElementById("homeSidenav").style.width = "0";
+          }
+        </script>
     </head>
 
     <body>
         <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a><h1>Check your sleep stats!</h1>
         <div id="homeSidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="mainpage.html" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
-          <a href="CalorieChecker.html" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
-          <a href="sleepcounter.html" id="active" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
-          <a href="ExerciseLog.html" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
+          <a href="/mainpage" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+          <a href="/caloriechecker" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
+          <a href="/sleepcounter" id="active" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
+          <a href="/exercise" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
           <a href="#" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
       </div>
         <button class = "modal-trigger" href = "#openform">new sleep log</button>
