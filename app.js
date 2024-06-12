@@ -69,6 +69,10 @@ const get_avg_hours_slept= `
 	    on sleep_log.age_range_id = sleep_age_range.age_range_id;
 ` 
 
+const avg_calorie_per_day = `
+    select format(avg(calorie_count),2) as calorie_count from calorie;
+`
+
 app.get("/statistics", (req, res) => {
         db.execute(get_hours_sum, (error, sumResults) => {
             if (error) {
@@ -82,8 +86,14 @@ app.get("/statistics", (req, res) => {
                             if (error) {
                                 res.status(500).send(error); // Internal Server Error
                             } else {
-                                const sum = sumResults[0]['total_hours'] || 0.00;
-                                res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'] || 0, hours_slept: sleepResults[0]['average_sleep'] || 0, min_age: sleepResults[0]['age_hours_min'] || 0, max_age: sleepResults[0]['age_hours_max'] || 0, age_range: sleepResults[0]['age_range'] || 0, recommendation: sleepResults[0]['recommendation']});
+                                db.execute(avg_calorie_per_day, (error, calResults) => {
+                                    if (error) {
+                                        res.status(500).send(error); // Internal Server Error
+                                    } else {
+                                        const sum = sumResults[0]['total_hours'] || 0.00;
+                                        res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'] || 0, hours_slept: sleepResults[0]['average_sleep'] || 0, min_age: sleepResults[0]['age_hours_min'] || 0, max_age: sleepResults[0]['age_hours_max'] || 0, age_range: sleepResults[0]['age_range'] || 0, recommendation: sleepResults[0]['recommendation'], calorie: calResults[0]['calorie_count']});
+                                        }
+                                    });
                                 }
                             });
                         }
@@ -121,6 +131,22 @@ app.get("/mainpage", (req, res) => {
 app.get("/caloriechecker", (req, res) => {
     res.render("caloriechecker");
 });
+
+
+const create_calorie_log = `
+    INSERT INTO calorie (calorie_count)
+    VALUES (?)
+`;
+
+app.post("/caloriechecker", (req, res) => {
+    db.execute(create_calorie_log, [req.body.calorie], (error, results) => {
+        if(error){
+            res.status(500).send(error);
+        }
+        
+    });
+});
+
 
 
 

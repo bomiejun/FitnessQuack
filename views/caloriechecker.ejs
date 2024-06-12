@@ -24,11 +24,12 @@
         <!-- Form for Calorie Checker -->
         <h4 class = "formintro"> Please enter in how many calories you've eaten today.</h4>
 
-        <form action = #>
+        <form action="/caloriechecker" method="post">
             <div  style ="text-align:center;">
                 <label >Calories:</label>
-                <input id="Calories" type = "text" required>
-                <button type = 'button' onclick ="store()" class = "smallbutton" id="submit">submit!</button>
+                <input id="Calories" type = "text" name="calorie"  required>
+                <input class = "smallbutton" id = "submit" type="submit" onclick = "store()" value="submit">
+                <!-- <button type = 'button' onclick ="store()" class = "smallbutton" id="submit">submit!</button> -->
                 <h5  id = "output" style = 'display: none'  >
                      Your calorie count is under the 1600 daily calorie minimum limit recommended by the US 2020-2025 Dietary Guidelines!
                      I highly encourage you to have a bit more food before you end the day, as calories contribute directly to your body's energy reserves! While it's important to keep your body at a balanced and healthy weight, it's just as important to keep yourself fed and watered, and to not skip meals.
