@@ -21,9 +21,7 @@ const get_all_exercise_items = `
        ON exercise_log.exercise_id = exercises.exercise_id
 `;
 
-const get_hours_sum = `
-    select sum(hours) as total_hours from exercise_log;
-`;
+
 
 app.get("/", (req, res) => {
     db.execute(get_all_exercise_items, (error, results) => {
@@ -43,17 +41,49 @@ app.get("/exercise", (req, res) => {
         if (error) {
             res.status(500).send(error); // Internal Server Error
         } else {
-            db.execute(get_hours_sum, (error, sumResults) => {
-                if (error) {
-                    res.status(500).send(error); // Internal Server Error
-                } else {
-                    const sum = sumResults[0]['total_hours'];
-                    res.render("exercise",{exerciselist:results, sum:sum});
-                }
-            });
+            res.render("exercise",{exerciselist:results});
         }
     });
 });
+const get_hours_sum = `
+    select sum(hours) as total_hours from exercise_log;
+`;
+
+const get_calorie_count = `
+    select sum(calories * hours) as total_calories from exercise_log
+	join exercises
+		on exercise_log.exercise_id = exercises.exercise_id;
+
+`
+
+const get_avg_hours_slept= `
+    select format(avg(hours), 2) as average_sleep from sleep_log;
+` 
+
+app.get("/statistics", (req, res) => {
+        db.execute(get_hours_sum, (error, sumResults) => {
+            if (error) {
+                res.status(500).send(error); // Internal Server Error
+            } else {
+                db.execute(get_calorie_count, (error, calorieResults) => {
+                    if (error) {
+                        res.status(500).send(error); // Internal Server Error
+                    } else {
+                        db.execute(get_avg_hours_slept, (error, sleepResults) => {
+                            if (error) {
+                                res.status(500).send(error); // Internal Server Error
+                            } else {
+                                const sum = sumResults[0]['total_hours'] || 0.00;
+                                res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'], hours_slept: sleepResults[0]['average_sleep']});
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        }
+);
+
 
 const get_all_sleep_items = `
     SELECT sleep_id, DATE_FORMAT(date, "%m-%d-%Y") as date, hours, sleep_log.age_range_id
@@ -72,6 +102,8 @@ app.get("/sleepcounter", (req, res) => {
         }
     });
 });
+
+
 
 app.get("/mainpage", (req, res) => {
     res.render("mainpage");

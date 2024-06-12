@@ -13,7 +13,8 @@
     
 
         <body>
-            <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a><h1>FITNESS QUACK: Better Health, with a Friend!</h1>
+            <a onclick="openNav()"><button class ="navigation"><i id="navButton" class="fa-solid fa-bars"></i></button></a>
+            <h1>Statistics!</h1>
             <!-- <a href="CalorieChecker.html"><button class="calorie">CALORIE CHECKER</button></a> calorie checker button (temporarily disabled) -->
             <div id="homeSidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -21,15 +22,13 @@
                 <a href="/caloriechecker" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
                 <a href="/sleepcounter" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
                 <a href="/exercise" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
-                <a href="/statistics"  class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
+                <a href="/statistics" id="active" class="navButton"><i class="fa-solid fa-chart-simple"></i>   Statistics</a>
             </div>
 
-            <div class="wrapper">
-            </div>
             <br> <br> <br>
-            <img src= "https://i.pinimg.com/564x/67/d6/d8/67d6d8d01681322d9918fc2a6897e125.jpg" id = "duck" class = "center">
-            <!-- stylize nav button -->
-            <script src="script/HomeScript.js"></script>
+            <h2>Hours Exercised: <%= sum %></h2>
+            <h2>Approximate calories burnt(Excluding Other Exercises): <%= calorie_count %></h2>
+            <h2>Average Hours Slept: <%= hours_slept %></h2>
 
             
 
