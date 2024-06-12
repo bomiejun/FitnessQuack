@@ -333,28 +333,23 @@
     <table>
         <th>Day</th>
         <th>Hours</th>
-        <th>Sleep</th>
         <th>Delete</th>
-        <% for(let i=0; i < exerciselist.length; i++) { %>
+        <% for(let i=0; i < sleeplist.length; i++) { %>
             <tr>
                 <td>
-                    <%= exerciselist[i].day %>
+                    <%= sleeplist[i].date %>
                 </td>
                 <td>
-                    <%= exerciselist[i].hours %>
+                    <%= sleeplist[i].hours %>
                 </td>
                 <td>
-                    <%= exerciselist[i].exercise %>
-                </td>
-                <td>
-                    <a class="delete-btn" href="/exercise/<%= exerciselist[i].log_id%>/delete">
+                    <a class="delete-btn" href="/sleepcounter/<%= sleeplist[i].sleep_id%>/delete"">
                         <i class="material-symbols-outlined ">delete</i>
                     </a>
                 </td>
             </tr>
             <% } %>
     </table>
-    <%= name %>
 </body>
 
 </html>

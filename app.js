@@ -67,8 +67,22 @@ app.get("/exercise", (req, res) => {
     });
 });
 
+const get_all_sleep_items = `
+    SELECT sleep_id, DATE_FORMAT(date, "%m-%d-%Y") as date, hours, sleep_log.age_range_id
+    FROM sleep_log
+    JOIN sleep_age_range
+       ON sleep_log.age_range_id = sleep_age_range.age_range_id
+`;
+
 app.get("/sleepcounter", (req, res) => {
-    res.render("sleepcounter")
+    db.execute(get_all_sleep_items, (error, results) => {
+        if (error) {
+            res.status(500).send(error); // Internal Server Error
+        } else {
+            // res.send(results);
+            res.render("sleepcounter",{sleeplist:results});
+        }
+    });
 });
 
 app.get("/mainpage", (req, res) => {
@@ -113,6 +127,38 @@ app.get("/exercise/:id/delete", (req, res)=>{
     })
 })
 
+const create_sleep_log = `
+    INSERT INTO sleep_log (date,hours, age_range_id)
+    VALUES (CURDATE(), ?, ?)
+`;
+
+app.post("/sleepcounter", (req, res) => {
+    db.execute(create_sleep_log, [req.body.hours, req.body.age], (error, results) => {
+        if(error){
+            res.status(500).send(error);
+        }
+        else {
+            res.redirect("/sleepcounter");
+        }
+    });
+});
+
+
+const delete_sleep = `
+    DELETE FROM sleep_log
+    WHERE sleep_id = ?
+`
+
+app.get("/sleepcounter/:id/delete", (req, res)=>{
+    db.execute(delete_sleep, [req.params.id], (error, results)=>{
+        if (error){
+            res.status(500).send(error);
+        }
+        else{
+            res.redirect("/sleepcounter");
+        }
+    })
+})
 
 
 // start the server
