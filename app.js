@@ -21,48 +21,36 @@ const get_all_exercise_items = `
        ON exercise_log.exercise_id = exercises.exercise_id
 `;
 
+const get_hours_sum = `
+    select sum(hours) as total_hours from exercise_log;
+`;
+
 app.get("/", (req, res) => {
     db.execute(get_all_exercise_items, (error, results) => {
         if (error) {
             res.status(500).send(error); // Internal Server Error
         } else {
             // res.send(results);
-            res.render("mainpage", { exerciselist: results});
+            res.render("mainpage");
         }
     });
+    
 });
 
-
-const get_hours_sum = `
-    select sum(hours) from exercise_log;
-`;
-
-app.get("/", (req, res) => {
-    db.execute(get_hours_sum, (error, results) => {
-        if (error) {
-            res.status(500).send(error); // Internal Server Error
-        } else {
-            // res.send(results);
-            res.render("exercise", { name: "Steffia"});
-        }
-    });
-});
-
-const get_exercise_details = `
-    SELECT log_id, DATE_FORMAT(day, "%m-%d-%Y") as day, hours, exercise_log.exercise_id
-    FROM exercise_log
-    JOIN exercises
-       ON exercise_log.exercise_id = exercises.exercise_id
-    WHERE log_id = ?
-`;
 
 app.get("/exercise", (req, res) => {
     db.execute(get_all_exercise_items, (error, results) => {
         if (error) {
             res.status(500).send(error); // Internal Server Error
         } else {
-            // res.send(results);
-            res.render("exercise",{exerciselist:results});
+            db.execute(get_hours_sum, (error, sumResults) => {
+                if (error) {
+                    res.status(500).send(error); // Internal Server Error
+                } else {
+                    const sum = sumResults[0]['total_hours'];
+                    res.render("exercise",{exerciselist:results, sum:sum});
+                }
+            });
         }
     });
 });
