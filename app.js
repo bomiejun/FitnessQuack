@@ -57,9 +57,16 @@ const get_calorie_count = `
 `
 
 const get_avg_hours_slept= `
-    select age_range, avg(hours) as average_sleep, age_hours_min, age_hours_max from sleep_log
+    select age_range, format(avg(hours), 2) as average_sleep, age_hours_min, age_hours_max,
+    CASE when 
+	    avg(hours) >= age_hours_min and avg(hours) <= age_hours_max then 'are sleeping a healthy amount of hours!'
+        when avg(hours) < age_hours_min then 'should sleep more!'
+        else 'should sleep less!'
+    end as recommendation
+    from sleep_log
     join sleep_age_range
 	    on sleep_log.age_range_id = sleep_age_range.age_range_id
+;
 ;
 ` 
 
@@ -77,7 +84,7 @@ app.get("/statistics", (req, res) => {
                                 res.status(500).send(error); // Internal Server Error
                             } else {
                                 const sum = sumResults[0]['total_hours'] || 0.00;
-                                res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'], hours_slept: sleepResults[0]['average_sleep'], min_age: sleepResults[0]['age_hours_min'], max_age: sleepResults[0]['age_hours_max']});
+                                res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'], hours_slept: sleepResults[0]['average_sleep'], min_age: sleepResults[0]['age_hours_min'], max_age: sleepResults[0]['age_hours_max'], age_range: sleepResults[0]['age_range'], recommendation: sleepResults[0]['recommendation']});
                                 }
                             });
                         }
