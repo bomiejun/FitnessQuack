@@ -91,7 +91,7 @@ app.get("/statistics", (req, res) => {
                                         res.status(500).send(error); // Internal Server Error
                                     } else {
                                         const sum = sumResults[0]['total_hours'] || 0.00;
-                                        res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'] || 0, hours_slept: sleepResults[0]['average_sleep'] || 0, min_age: sleepResults[0]['age_hours_min'] || 0, max_age: sleepResults[0]['age_hours_max'] || 0, age_range: sleepResults[0]['age_range'] || 0, recommendation: sleepResults[0]['recommendation'], calorie: calResults[0]['calorie_count'] || 0});
+                                        res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'] || 0, hours_slept: sleepResults[0]['average_sleep'] || 0, min_age: sleepResults[0]['age_hours_min'] || 0, max_age: sleepResults[0]['age_hours_max'] || 0, age_range: sleepResults[0]['age_range'] || 0, recommendation: sleepResults[0]['recommendation'], calorie: calResults[0]['calorie_count']});
                                         }
                                     });
                                 }
