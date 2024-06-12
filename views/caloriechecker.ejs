@@ -27,8 +27,8 @@
         <form action="/caloriechecker" method="post">
             <div  style ="text-align:center;">
                 <label >Calories:</label>
-                <input id="Calories" type = "text" required>
-                <button type = 'button' onclick ="store()" class = "smallbutton" id="submit">submit!</button>
+                <input id="Calories" name = "calorie" type = "text" required>
+                <input id = "submit" type="submit" class = "smallbutton" onclick = "store()" value="submit!">
 
                 <h5 id = "healthy" style = 'display: none' >
                     Your calorie count for today is within range of the healthy daily calorie limit 
