@@ -57,7 +57,10 @@ const get_calorie_count = `
 `
 
 const get_avg_hours_slept= `
-    select format(avg(hours), 2) as average_sleep from sleep_log;
+    select age_range, avg(hours) as average_sleep, age_hours_min, age_hours_max from sleep_log
+    join sleep_age_range
+	    on sleep_log.age_range_id = sleep_age_range.age_range_id
+;
 ` 
 
 app.get("/statistics", (req, res) => {
@@ -74,7 +77,7 @@ app.get("/statistics", (req, res) => {
                                 res.status(500).send(error); // Internal Server Error
                             } else {
                                 const sum = sumResults[0]['total_hours'] || 0.00;
-                                res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'], hours_slept: sleepResults[0]['average_sleep']});
+                                res.render("statistics",{sum:sum, calorie_count: calorieResults[0]['total_calories'], hours_slept: sleepResults[0]['average_sleep'], min_age: sleepResults[0]['age_hours_min'], max_age: sleepResults[0]['age_hours_max']});
                                 }
                             });
                         }
