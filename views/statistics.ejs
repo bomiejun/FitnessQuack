@@ -18,7 +18,7 @@
             <!-- <a href="CalorieChecker.html"><button class="calorie">CALORIE CHECKER</button></a> calorie checker button (temporarily disabled) -->
             <div id="homeSidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="/mainpage" id="active" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
+                <a href="/mainpage" class="navButton"><i class="fa-solid fa-house"></i>   Home</a>
                 <a href="/caloriechecker" class="navButton"><i id="icon" class="fa-solid fa-chart-pie"></i>   Nutrition</a>
                 <a href="/sleepcounter" class="navButton"><i class="fa-solid fa-bed"></i>   Sleep</a>
                 <a href="/exercise" class="navButton"><i class="fa-solid fa-dumbbell"></i>   Exercise</a>
@@ -26,18 +26,52 @@
             </div>
 
             <br> <br> <br>
-            <h2>Hours Exercised: <%= sum %></h2>
-            <h2>Approximate calories burnt(Excluding Other Exercises): <%= calorie_count %></h2>
-            <h2>Average Hours Slept: <%= hours_slept %></h2>
+            
+            <div class="box">
+              <div class="statistics">
+                <h2>Quack! Here's your health stats! <br><br></h2>
+                <h2>Hours Exercised: <%= sum %></h2>
+                <h2>Approximate calories burnt: <%= calorie_count %></h2>
+                <h2>Average Hours Slept: <%= hours_slept %></h2>
+                <h2><br><br>[Sincerely, the FitnessQuack Duck!]</h2>
 
+              </div>
+              <img src="https://pbs.twimg.com/media/EzhYlPVVoAIkO5-?format=jpg&name=4096x4096" alt="">
+            </div>
+            
             
 
     <style>
+      .statistics{
+        padding-top:10px;
+        width:600px;
+        height:400px;
+        color:rgb(255, 255, 255);
+            font-size: 5x;
+            font-family: "Chakra Petch";
+            text-shadow: #ffe77c;
+            color: rgb(243, 173, 132);
+            border: 6px solid #f9cd7c;
+            text-align:center;
+            background-color: rgb(221, 158, 112);
+            border-style:groove;
+            border-radius: 10px;
+            border-color: rgb(255, 255, 255);
+            -webkit-text-fill-color: rgba(255, 248, 243, 0.901); 
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgb(132, 132, 132);
+      }
+      .box{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-        .icon {
-            
+        img{
+          width:30%;
+          height:30%;
+          padding-left: 10%;
         }
-
 
         #navButton {
             font-size:20px;
