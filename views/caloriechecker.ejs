@@ -108,24 +108,32 @@
                                 }
                             }
                             
-                            else if (1600 <= cals < 3000) {
-                                if(health.style.display == "block") {
+                            else {
+                                if (cals < 3000) {
+                                    if(health.style.display == "block") {
                                     health.style.display = "none";
                                 }
 
                                 else {
                                     health.style.display = "block";
                                 }
-                            }
 
-                            else if (3000 < cals){
-                                if (mucho.style.display == "block") {
+                                }
+
+                                else {
+                                    if (mucho.style.display == "block") {
                                     mucho.style.display = "none";
                                 }
 
                                 else {
                                     mucho.style.display = "block";
                                 }
+                                }
+                             
+                            
+
+                           
+                                
                             }
 
                             if (duck.style.display == "block") {
