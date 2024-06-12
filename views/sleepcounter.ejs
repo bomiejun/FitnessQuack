@@ -162,7 +162,7 @@
         }
         
         #sleep-btn{
-            width:175px;
+            width:150px;
             text-align: center;
             border-radius:25px;
             height:40px;
@@ -284,7 +284,8 @@
             var form = document.getElementById('form');
             form.style.display = 'block';
           }
-          function closeForm(){
+          function closeForm(event){
+            event.preventDefault();
             var form = document.getElementById('form');
             form.style.display = 'none';
           }
@@ -323,7 +324,7 @@
                 </select>        
                 <div class="options">
                     <input id = "submit" type="submit" value="Add Log!">
-                    <button id = "close-btn" onclick="closeForm()">Close!</button>
+                    <button id = "close-btn" type = "button" onclick="closeForm(event)">Close!</button>
                 </div>
                 </form>
             </div>
