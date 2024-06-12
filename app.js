@@ -61,6 +61,7 @@ const get_avg_hours_slept= `
     CASE when 
 	    avg(hours) >= age_hours_min and avg(hours) <= age_hours_max then 'are sleeping a healthy amount of hours!'
         when avg(hours) < age_hours_min then 'should sleep more!'
+        when avg(hours) is null then 'should sleep more!'
         else 'should sleep less!'
     end as recommendation
     from sleep_log
