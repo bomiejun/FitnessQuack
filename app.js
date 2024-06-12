@@ -66,9 +66,7 @@ const get_avg_hours_slept= `
     end as recommendation
     from sleep_log
     join sleep_age_range
-	    on sleep_log.age_range_id = sleep_age_range.age_range_id
-;
-;
+	    on sleep_log.age_range_id = sleep_age_range.age_range_id;
 ` 
 
 app.get("/statistics", (req, res) => {
