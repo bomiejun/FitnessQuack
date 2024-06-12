@@ -29,17 +29,40 @@
                 <label >Calories:</label>
                 <input id="Calories" type = "text" required>
                 <button type = 'button' onclick ="store()" class = "smallbutton" id="submit">submit!</button>
+
+                <h5 id = "healthy" style = 'display: none' >
+                    Your calorie count for today is within range of the healthy daily calorie limit 
+                    (1600-2400 for females, 2000-3000 for males!) Congratulations!
+                     Ensuring that you eat within the range of the recommended limits of calories per day 
+                     means you're making sure your body is getting the nutrients it needs without over-eating 
+                     or under-eating! Keep in mind, however, that not all calories are the same! 2,000 calories of hamburgers 
+                     and 2,000 calories of chicken breast may look similar on paper, but the amount of nutrients found in 
+                     the latter far surpasses those in hamburgers. Make sure your diet remains varied and that you're eating
+                     lots of organic protein, fruit, vegetables, grains, and other healthy foods! <br> Stay healthy! <br> 
+                     [Sincerely, the FitnessQuack Duck!] </h5>
+
+
                 <h5  id = "output" style = 'display: none'  >
                      Your calorie count is under the 1600 daily calorie minimum limit recommended by the US 2020-2025 Dietary Guidelines!
                      I highly encourage you to have a bit more food before you end the day, as calories contribute directly to your body's energy reserves! While it's important to keep your body at a balanced and healthy weight, it's just as important to keep yourself fed and watered, and to not skip meals.
                      Skipping meals could have long-term effects on your body's metabolism, and can lead to lowered blood sugar, which creates health problems down the line.
                      If you're on a diet or are purposely cutting your calories down, and are unsure how to meet the recommended calorie minimum, try eating some high-protein foods! Foods such as chicken breast, boiled eggs, or greek yogurt typically have less calories, but lots of lean protein and other nutrients, helping you to build muscle and keep yourself at a healthy weight!
                     <br> <br> Additionally, keep in mind that for those who are biologically male, a 2,400 calorie minimum is recommended instead due to differences in size, body structure and muscle distribution! <br> Stay healthy! <br> [Sincerely, the FitnessQuack Duck!] </h5>
+
+
+                <h5 id = "toomuch" style = 'display: none' >
+                    Your calorie count is over the daily recommended limit of 2400 calories for women, or 3000 calories for men. 
+                    Consuming too many calories and going over the amount of nutrients that your body necessarily needs in a day 
+                    can potentially be dangerous for your health, as excessive consumption can lead to weight gain, 
+                    feelings of discomfort or bloating throughout the day, and raises in blood sugar levels,
+                    which can cause more serious health problems down the line, such as high blood pressure, heart disease, the development of gallstones, or raise the risk of endometrical cancer.
+                    However, do not only look at your calorie count to determine how safe you are being with your health! Exercise burns calories, reducing your overall calorie count for the day, and depending on what your body type is, the amount you eat will affect you differently.
+                    Keep this in mind, and remember to stay healthy! [Sincerely, the FitnessQuack Duck!]
+                </h5>
+                    
                 </div>
 
-                <h5 id = "calshealthy" style = 'display: none' >
-                    Your calorie count for today is within range of the healthy daily calorie limit (1600-2400 for females, 2000-3000 for males!) Congratulations! Ensuring that you eat within the range of the recommended limits of calories per day means you're making sure your body is getting the nutrients it needs without over-eating or under-eating! Keep in mind, however, that not all calories are the same! 2,000 calories of hamburgers and 2,000 calories of chicken breast may look similar on paper, but the amount of nutrients found in the latter far surpasses those in hamburgers. Make sure your diet remains varied and that you're eating lots of organic protein, fruit, vegetables, grains, and other healthy foods! <br> Stay healthy! <br> [Sincerely, the FitnessQuack Duck!] </h5>
-
+                
                 <img src= "https://i.pinimg.com/564x/af/66/f6/af66f6f05298dacf38f7badfc176080b.jpg" id = "duck" style="display: none" class = "center">
 
                 
@@ -70,45 +93,53 @@
                         var submit = document.getElementById("submit");
 
                         // <!-- calories are too low html page -->
-                        if (cals < 1600) {
+                        
                             var output = document.getElementById("output");
+                            var health = document.getElementById("healthy");
+                            var mucho = document.getElementById("toomuch");
                             var duck = document.getElementById("duck");
 
-                        if (output.style.display == "block") {
-                            output.style.display = "none";
-                        }
-                        else {
-                            output.style.display = "block";
-                        }
+                            if (cals < 1600) {
+                                if (output.style.display == "block") {
+                                output.style.display = "none";
+                                }
+                                else {
+                                 output.style.display = "block";
+                                }
+                            }
+                            
+                            else if (1600 <= cals < 3000) {
+                                if(health.style.display == "block") {
+                                    health.style.display = "none";
+                                }
 
-                        if (duck.style.display == "block") {
+                                else {
+                                    health.style.display = "block";
+                                }
+                            }
+
+                            else if (3000 < cals){
+                                if (mucho.style.display == "block") {
+                                    mucho.style.display = "none";
+                                }
+
+                                else {
+                                    mucho.style.display = "block";
+                                }
+                            }
+
+                            if (duck.style.display == "block") {
                             duck.style.display = "none";
-                        }
-                        else {
+                            }
+                            else {
                             duck.style.display = "block";
-                        }
-                        }
+                            }
+                            }
 
-                        // else if (1600 <= cals < 3000){
-                        //     var calshealthy = document.getElementByid("calshealthy");
-                        //     var duck = document.getElementById("duck");
-
-                        //     if (calshealthy.style.display == "block") {
-                        //     calshealthy.style.display = "none";
-                        // }
-                        // else {
-                        //     calshealthy.style.display = "block";
-                        // }
-
-                        // if (duck.style.display == "block") {
-                        //     duck.style.display = "none";
-                        // }
-                        // else {
-                        //     duck.style.display = "block";
-                        // }
-                        // }
+                            
                         
-                        }
+                        
+                        
 
                         
                        
